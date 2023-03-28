@@ -16,6 +16,10 @@ add_btn.addEventListener('click', () => {
 });
 
 const create_item = () => {
+  const item = document.create_item('div');
+item.classList.add('item');
+var s = document.getElementById(item);
+s.value ='order'
 };
 
 document.querySelectorAll('.drop').forEach(element => {
