@@ -42,7 +42,7 @@ return create_item();
 document.querySelectorAll('.drop').forEach(element => {
   element.addEventListener('drop', event=>{
   event.preventDefault(),
-  const id= event.DataTransfer.getData('text');
+  id= event.DataTransfer.getData('text');
   event.target .appendChild(document.getElementById(id));
 });
 element.addEventListener('dragover', event=> event.preventDefault() )
