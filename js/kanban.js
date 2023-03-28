@@ -16,11 +16,33 @@ add_btn.addEventListener('click', () => {
 });
 
 const create_item = () => {
-  const item = document.create_item('div');
+  let item = document.create_item('div');
 item.classList.add('item');
-var s = document.getElementById(item);
-s.value ='order'
+item.id('_item' + order);
+item.draggable= true;
+item.addEventListener('dragstart', event => event.DataTransfer.setData('text', event.target(id)));
+item.addEventListener('dragend', event => event.DataTransfer.clearData(event));
+var input = document. createElement('input');
+item . appendChild (input);
+var save_btn = document . createElement('button');
+save_btn.innerHTML= Save;
+save_btn.addEventListener('click',()=> {
+  let error .innerHTML = "";
+  if (input.value !== ""){
+    order += 1;
+    item .innerHTML = input .value;
+    adding = false;
+  }
+  else error.innerHTML = 'message';
+)
+return create_item();
 };
 
 document.querySelectorAll('.drop').forEach(element => {
+  element.addEventListener('drop', event=> 
+  event.preventDefault();
+  const id= event.DataTransfer.getData('text')
+  event.target .appendChild(document.getElementById(id));
+  );
+element.addEventListener('dragover', event=> event.preventDefault() )
 });
